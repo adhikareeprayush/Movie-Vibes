@@ -1,131 +1,188 @@
+@import url("https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+:root {
+  --dark-100: #141414;
+  --dark-200: #292929;
+  --dark-300: #404040;
+  --dark-400: #585858;
+  --dark-500: #727272;
+  --dark-600: #8c8c8c;
+}
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  scroll-behavior: smooth;
 }
 
 html,
 body {
-  height: 100%;
-  width: 100%;
-  font-family: "Roboto", sans-serif;
+  min-height: 100vh;
+  overflow-x: hidden;
 }
 
 body {
+  background-color: var(--dark-100);
+  color: white;
+  font-family: "Fira Sans", sans-serif;
+  width: 100%;
+  position: relative;
+}
+
+a {
+  text-decoration: none;
+  color: white;
+  transition: all 0.3s ease;
+}
+
+ul {
+  list-style: none;
   display: flex;
-  justify-content: center;
-  align-items: center;
+  gap: 20px;
+}
+
+.btn {
+  padding: 10px 20px;
+  background: var(--dark-200);
+  box-shadow: 1px 1px 10px rgba(0, 0, 0, 1);
+  border: none;
+  border-radius: 5px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  width: fit-content;
+}
+
+.btn:hover {
+  background: var(--dark-300);
 }
 
 .container {
-  max-width: 600px;
-  border-radius: 5px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  background-color: #bed7dc;
-  backdrop-filter: blur(10px);
+  margin: 30px auto;
+  padding: 0 20px;
+  width: 1200px;
+  height: fit-content;
+
+  box-shadow: 1px 1px 10px rgba(0, 0, 0, 1);
+
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
-form {
-  width: 100%;
+.header {
   display: flex;
-  flex-direction: column;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
+  padding: 20px 0;
 }
 
-.input-group {
+.search {
   display: flex;
-  flex-direction: column;
-  width: 100%;
-  padding: 20px;
+  gap: 10px;
+}
+
+.search button {
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  background: var(--dark-200);
+  color: white;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.search button:hover {
+  background: var(--dark-300);
 }
 
 input {
   padding: 10px;
-  margin-bottom: 10px;
+  border: none;
   border-radius: 5px;
-  width: 100% !important;
-  border: none;
-  outline: none;
+  background: var(--dark-200);
+  color: white;
+  width: 100%;
+  font-size: 1rem;
+  font-weight: 600;
 }
 
-label {
-  color: #fff;
+input::placeholder {
+  color: var(--dark-500);
 }
 
-select {
-  padding: 10px;
-  margin-bottom: 10px;
+hr {
+  border: 1px solid var(--dark-300);
+  margin: 20px 0;
+}
+
+.movie {
+  display: flex;
+  gap: 20px;
+  margin: 20px 0;
+  padding: 20px;
+  width: 100%;
+}
+
+.movie img {
+  width: 200px;
+  height: 300px;
+  object-fit: cover;
   border-radius: 5px;
-  width: 100% !important;
-  border: none;
-  outline: none;
 }
 
-/* Style the options of the select */
-select option {
-  padding: 10px !important;
-  border-radius: 5px !important;
-  border: none;
-  outline: none;
+.movie-info {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.movie-info h3 {
+  font-size: 1.2rem;
+  font-weight: 700;
+}
+
+.movie-info p {
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.movie-info span {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--dark-500);
 }
 
 .btn {
-  padding: 10px;
-  margin-bottom: 10px;
-  border-radius: 5px;
+  height: fit-content;
+  width: fit-content;
+}
+
+footer {
+  position: absolute;
+  bottom: 0;
   width: 100%;
-  border: none;
-  outline: none;
-  background-color: #f9a826 !important;
-  color: #fff !important;
-  cursor: pointer;
+  text-align: center;
+  padding: 10px 0px;
+  background: var(--dark-200);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
 }
 
-.btn:hover {
-  background-color: #ffa310 !important;
-  color: #fff !important;
+footer a {
+  color: white;
 }
 
-.card img {
-  width: 300px;
-  height: 300px;
-  object-fit: cover;
+footer a:hover {
+  color: var(--dark-500);
 }
 
-.image {
-  width: 200px;
-  height: 200px;
-  object-fit: cover;
-}
-
-img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-.result {
-  background-color: transparent;
-  border: 1px solid #dddddd35;
-}
-
-@media (min-width: 768px) {
-  .container {
-    width: 600px !important;
-  }
-}
-
-@media (max-width: 768px) {
-  .container {
-    width: 90% !important;
-  }
-}
-
-.hide {
-  display: none !important;
-}
-
-.show {
-  display: block !important;
+footer p {
+  font-size: 1rem;
+  font-weight: 600;
 }
